@@ -1,0 +1,93 @@
+﻿@model IEnumerable<DepartmentViewModel>
+
+@{
+    var title = "Departman Listesi";
+    ViewData["Title"] = title;
+}
+
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>@title</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/">Anasayfa</a></li>
+                    <li class="breadcrumb-item active">@title</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">@title</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-body">
+                                <table id="department" class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>İsim</th>
+                                            <th>Sil</th>
+                                            <th>Düzenle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Name</td>
+                                                <td>
+                                                    <a href="/department/delete/@item.Id" class="btn btn-danger delete" onclick="return confirm('Silmek istediğinize emin misiniz?')">Sil</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/department/update/@item.Id" class="btn btn-primary">Düzenle</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript">
+    $('#department').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": true,
+        "autoWidth": false,
+        "responsive": true,
+        dom: "Bfrtip",
+        buttons: [
+            {
+                text: 'Departman Ekle',
+                className: 'btn btn-success',
+                attr: {
+                    id: 'add',
+                    style: "float: left;margin-right:5px;margin-bottom:5px",
+                }
+            }
+        ]
+    });
+
+    $("#add").on('click', function () {
+        window.location.href = "/department/insert"
+    });
+</script>
