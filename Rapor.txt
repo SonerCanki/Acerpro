@@ -1,0 +1,34 @@
+
+
+Acerpro projesi katmalı mimari ile generic repository pattern kullanılarak .net 6 üzerinde geliştirdim.
+
+Database işlemleri için Entity framework ve alakalı paketleri(design,tool) kullandım. Database olarak ms-sql kullandım.
+
+Initial migration dosyası bulunmaktadır. connection string'i kontrol ettikten sonra update-database ile database'i ayağa kaldırabilirsiniz.
+
+Kolaylık olabileceğini düşündüğüm için InmemoryDb paketini indirdim. Acerpro.API > program.cs dosyasında 18. satırı yoruma alıp 19. satırı yorumdan çıkarırsanız o şekilde de rahatça projeyi ayağa kaldırabilirsiniz.
+
+Giriş bilgilerini Acerpro.Model > context klasörü içindeki seed datada bulabilirsiniz. 
+
+Authentication için jwt token kullandım.
+
+Dto ve database nesnelerimi eşleştirmek için automapper paketi kullandım.
+
+Backende istek atmak için refit paketini kullandım.
+
+Frontend için hazır admin template kullandım.
+
+Tablo jquery datatable kullandım.
+
+Jquery ile validasyonlarını yaptım.
+
+Toaster kullandım. toaster'ı sadece login işlemlerinde diğer işlemlerde kullanmadım.
+
+
+
+
+Bu tarz bir proje için mimari yapı ve kullandığım paketlerin bazıları fazla olabilir ama genel olarak neler yapabildiğimi görmeniz için bu şekilde geliştirdim. 
+Basit bir projeydi takıldığım ya da zorlandığım bir şey olmadı. En iyi şekilde tamamlamaya çalıştım.
+
+
+ 

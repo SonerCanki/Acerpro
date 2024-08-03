@@ -15,8 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 
-//builder.Services.AddDbContext<DataContext>(db => db.UseSqlServer(builder.Configuration.GetConnectionString("Conn")));
-builder.Services.AddDbContext<DataContext>(db => db.UseInMemoryDatabase("acerpro"));
+builder.Services.AddDbContext<DataContext>(db => db.UseSqlServer(builder.Configuration.GetConnectionString("Conn")));
+//builder.Services.AddDbContext<DataContext>(db => db.UseInMemoryDatabase("acerpro"));
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IDepartmentRepository, DepartmentRepository>();
